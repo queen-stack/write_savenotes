@@ -1,0 +1,26 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/queen-stack/write_savenotes.git"
+  },
+  "keywords": [
+    "Note",
+    "Taker"
+  ],
+  "author": "Jenifer Queen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/queen-stack/write_savenotes/issues"
+  },
+  "homepage": "https://github.com/queen-stack/write_savenotes#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
