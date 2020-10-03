@@ -18,15 +18,10 @@ router.delete('/notes/:id', (req, res) => {
 });
 
 router.post('/notes', (req, res) => {
-  // set id based on what the next index of the array will be
-  req.body.id = notes.length.toString();
-
-  if (!validateNotes(req.body)) {
-    res.status(400).send('Notes is not properly formatted.');
-  } else {
-    const note = createNewNotes(req.body, notes);
-    res.json(notes);
-  }
-});
+  console.log(JSON.stringify(req.body));
+   var results = addNote(req.body);
+   console.log (JSON.stringify(results));
+   return res.json(results);
+   });
 
 module.exports = router;
