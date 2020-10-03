@@ -1,18 +1,15 @@
 const router = require('express').Router();
-const { createNewNotes, validateNotes } = require('../../lib/notes');
+const { addNote, deleteNote, getNotes } = require('../../lib/notes');
 
-let notes = JSON.parse(fs.readFileSync('./data/db.json'));
+//let notes = JSON.parse(fs.readFileSync('./data/db.json'));
 
 router.get('/notes', (req, res) => {
-  let results = notes;
-  // if (req.query) {
-  //   results = filterByQuery(req.query, results);
-  // }
-  res.json(results);
+  let results = getNotes();
+    res.json(results);
 });
 
-router.get('/notes/:id', (req, res) => {
-  const result = findById(req.params.id, notes);
+router.delete('/notes/:id', (req, res) => {
+  const result = deleteNote(req.params.id);
   if (result) {
     res.json(result);
   } else {

@@ -19,13 +19,13 @@ const debug = true;   //   -- set to false before committing!
 
 // Write the "database" information back to disk
 // Added v0.7
-function updateDatabase() {
-  if (debug) {
-    console.log(JSON.stringify(notes));
-  }
+// function updateDatabase() {
+//   if (debug) {
+//     console.log(JSON.stringify(notes));
+//   }
 
-  fs.writeFileSync('./data/db.json', JSON.stringify(notes));
-}
+//   fs.writeFileSync('./data/db.json', JSON.stringify(notes));
+// }
 
 // Routes
 // =============================================================

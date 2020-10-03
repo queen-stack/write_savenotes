@@ -12,31 +12,22 @@ test('creates a note object', () => {
 test('filters by query', () => {
   const startingNotes = [
     {
-      id: '1',
-      name: 'Input',
-      task: ['action']
+      title: 'title 1',
+      text: 'text 1',
+      id: 0
     },
     {
-      id: '2',
-      name: 'Input',
-      task: ['reminder']
+      title: 'title 2',
+      text: 'text 2',
+      id: 2
     }
   ];
 
-  const updatedNotes = filterByQuery([task: 'action' , reminder]);
+  const updatedNotes = filterByQuery(['title', 'text' , 'id']);
 
   expect(updatedNotes.length).toEqual(1);
 });
 
-test('finds by id', () => {
-  const startingNotes = [
-    {
-      //enter test data
-    },
-    {
-     //enter test data
-    }
-  ];
 
   const result = findById('3', startingNotes);
 
