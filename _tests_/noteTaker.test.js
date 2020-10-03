@@ -1,15 +1,15 @@
 const fs = require('fs');
-const { filterByQuery, findById, createNewNote, validateNote} = require('../lib/note.js');
+const { addNote, deleteNote, getNotes } = require('../../lib/notes');
 const { notes } = require('../data/db');
 
 test('creates a note object', () => {
-  const note = createNewNote({ name: 'name', id: 'jhgdja3ng2' }, notes);
+  const note = createNewNote({ title: 'title', text: 'skjdhf' }, notes);
 
-  expect(note.name).toBe('name');
-  expect(note.id).toBe('jhgdja3ng2');
+  expect(note.text).toBe('title');
+  expect(note.id).toBe('skjdhf');
 });
 
-test('filters by query', () => {
+test('find note', () => {
   const startingNotes = [
     {
       title: 'title 1',
@@ -19,7 +19,7 @@ test('filters by query', () => {
     {
       title: 'title 2',
       text: 'text 2',
-      id: 2
+      id: 1
     }
   ];
 
@@ -29,23 +29,9 @@ test('filters by query', () => {
 });
 
 
-  const result = findById('3', startingNotes);
-
-  expect(result.id).toBe('name');
-});
-
-test('validates task type', () => {
-  
-  };
-
-  const invalidNote = {
-    id: '3',
-    //fill this out
-  };
-
   const result = validateNote(note);
-  const result2 = validateNote(invalidNote;
+  const result2 = validateNote(invalidNote);
 
   expect(result).toBe(true);
   expect(result2).toBe(false);
-});
+
