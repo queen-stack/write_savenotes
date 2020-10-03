@@ -1,10 +1,8 @@
-// Dependencies
-// =============================================================
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const shortid = require('shortid');
-const { formatWithOptions } = require('util');
+
 
 const app = express();
 const PORT = 3001;
@@ -12,13 +10,12 @@ const PORT = 3001;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));  // added v0.7
+app.use(express.static('public'));  // 
 
-const debug = true;   // Added v0.7   -- set to false before committing!
+const debug = true;   //   -- set to false before committing!
 
 // Set up the data
 // =============================================================
-let notes = JSON.parse(fs.readFileSync('./data/db.json'));
 
 // Write the "database" information back to disk
 // Added v0.7
@@ -35,7 +32,7 @@ function updateDatabase() {
 // Return the Note Taker landing page.
 app.get('/', (req, res) => {
 
-  if (debug) { console.log("get /"); }  // updated v0.7
+  if (debug) { console.log("get /"); }  // 
 
   res.sendFile(path.join(__dirname, './public/index.html'))
 });
@@ -43,7 +40,7 @@ app.get('/', (req, res) => {
 // Return the notes.html page
 app.get('/notes', (req, res) => {
 
-  if (debug) { console.log("get /notes"); }  // updated v0.7
+  if (debug) { console.log("get /notes"); }  // 
 
   res.sendFile(path.join(__dirname, './public/notes.html'))
 });
@@ -51,7 +48,7 @@ app.get('/notes', (req, res) => {
 // Return all the notes in the database
 app.get('/api/notes', (req, res) => {
 
-  if (debug) { console.log("get /api/notes"); }  // updated v0.7
+  if (debug) { console.log("get /api/notes"); }  // 
 
   res.json(notes);
 });

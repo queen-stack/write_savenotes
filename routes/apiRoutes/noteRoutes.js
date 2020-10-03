@@ -1,12 +1,13 @@
 const router = require('express').Router();
-const { filterByQuery, findById, createNewNotes, validateNotes } = require('../../lib/notes');
-const { notes} = require('../../data/db');
+const { createNewNotes, validateNotes } = require('../../lib/notes');
+
+let notes = JSON.parse(fs.readFileSync('./data/db.json'));
 
 router.get('/notes', (req, res) => {
   let results = notes;
-  if (req.query) {
-    results = filterByQuery(req.query, results);
-  }
+  // if (req.query) {
+  //   results = filterByQuery(req.query, results);
+  // }
   res.json(results);
 });
 
