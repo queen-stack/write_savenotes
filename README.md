@@ -15,16 +15,19 @@ Note Taker that can be used to write and save notes.
 -[profile](#profile)
         
  ##username:
-   queen-stack
+   queen-stack 
         
  ##description:
      This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+     Deployed to heruko https://salty-atoll-89598.herokuapp.com/notes
        
  ##installation:
 * `GET /notes` should return the `notes.html` file
 * `GET *` should return the `index.html` file
 * `GET /api/notes` should read the `db.json` file and return all saved notes as JSON
 * `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
+* install npm pakages to run from the terminal : `express` , `shortid`
+ 
 
   ##feature enhancement:
   * `DELETE /api/notes/:id` to receive a query parameter containing the id of a note to delete. In order to delete a note, will need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
@@ -57,7 +60,7 @@ Note Taker that can be used to write and save notes.
   w3schools, TA hours 
         
  ##test:
-  TDD
+  error 404 if page is unable to be reached
               
   ##profile:
   https://www.linkedin.com/in/jeniferqueen/
